@@ -1,4 +1,4 @@
-﻿namespace Program_1
+﻿namespace Project2
 {
     internal class Program
     {
@@ -8,24 +8,19 @@
             int n1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter a n2");
             int n2 = int.Parse(Console.ReadLine());
-            int i, j;
-
-            for (i = n1; i <= n2; i++)
+            int sum = 0;
+            for (int x = n1; x <= n2; x++)
             {
-                int count = 0;
-                for (j = 1; j <= i; j++)
+                sum = 0;
+
+                for (int i = 1; i <= x / 2; i++)
                 {
-
-                    if (i % j == 0)
-                    { count = count + 1; }
+                    if (x % i == 0)
+                        sum += i;
                 }
-
-                if (count <= 2)
-                { Console.WriteLine(i); }
-
-
+                if (sum == x)
+                    Console.WriteLine(x);
             }
-            Console.ReadKey();
         }
     }
 }
